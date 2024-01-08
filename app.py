@@ -1,5 +1,6 @@
 import pandas as pd
 from pymongo import MongoClient
+from dotenv import load_dotenv
 from transformers import pipeline
 
 
@@ -17,7 +18,7 @@ df = pd.read_excel(input_excel_file)
 
 # Initialize GPT-3 pipeline from transformers library
 gpt3 = pipeline("text-generation", model="gpt-3.5-turbo",
-                token="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")
+                token="OPENAI_API_TOKEN")
 
 #  context for the AI model
 context = "This is the context for GPT-3."
